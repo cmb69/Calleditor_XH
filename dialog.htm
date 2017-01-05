@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>{#calleditor_dlg.title}</title>
+    <script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+    <script type="text/javascript" src="../../utils/form_utils.js"></script>
+    <script type="text/javascript" src="./js/dialog.js"></script>
+    <script type="text/javascript" src="./calls.js"></script>
+    <style type="text/css" media="screen">
+        #params {margin-top: 1em}
+        input {float: left}
+        label {float: left; width: 10em}
+        br {clear: both}
+        div.mceActionPanel {margin-top: 2em}
+    </style>
+</head>
+<body>
+<p class="title">{#calleditor_dlg.title}</p>
+<form onsubmit="CallBuilderDialog.insert(); return false;" name="callbuilder" action="#">
+    <div id="call_editor">
+        <label for="call">Call</label>
+        <select name="call" id="call" onchange="CallBuilderDialog.rebuildParams()"></select>
+        <div id="params"></div>
+    </div>
+    <div class="mceActionPanel">
+        <input type="button" id="insert" name="insert" value="{#insert}" onclick="CallBuilderDialog.insert();">
+        <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();">
+    </div>
+</form>
+</body>
+</html>
